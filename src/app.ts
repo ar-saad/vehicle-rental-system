@@ -28,6 +28,14 @@ app.use("/api/v1/bookings", bookingRoute);
 // Auto run booking update service
 autoReturnVehiclesRunner();
 
+// ROOT Route
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).json({
+    success: true,
+    message: "Welcome to the Vehicle Rental System API",
+  });
+});
+
 // Not Found Route
 app.use((req: Request, res: Response) => {
   res.status(404).json({
